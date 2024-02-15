@@ -1,0 +1,26 @@
+-You will need all turtlebot3 package and it's dependancies in foxy distro
+-In files you will need to take gazebo2.launch.py and add to turtlebot3_manipulation_bringup package in launch folder
+-In files you will need to take project_world folder and .model and add to turtlebot3_manipulation_bringup package in worlds folder
+-In files you will need to take map_last.pgm and map_last.yaml and and put both in home
+
+
+*in terminal run
+ros2 launch turtlebot3_manipulation_bringup gazebo2.launch.py
+ros2 launch turtlebot3_manipulation_navigation2 navigation2.launch.py map_yaml_file:=$HOME/map_last.yaml
+
+*go to place of those python scripts and open terminal and run in this sequence
+python3 arm_home_py   (To make arm in home as it may cause flip)
+python3 detect_blue.py
+
+new terminal and as it end follow with next command
+python3 way_point_exec_paths1.py
+python3 chase_container.py
+python3 arm_pick.py
+python3 way_point_exec_paths2.py
+python3 arm_place.py
+python3 way_point_exec_paths3.py
+python3 chase_container.py
+python3 arm_pick.py
+python3 way_point_exec_paths4.py
+python3 arm_place.py
+python3 way_point_exec_paths5.py
